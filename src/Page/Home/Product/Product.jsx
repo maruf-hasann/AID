@@ -14,6 +14,8 @@ import { Pagination } from "swiper/modules";
 const Product = () => {
   const [show,setShow] = useState(false)
   const [products, setProducts] = useState();
+  const [cart, setCart] = useState(false);
+  console.log(cart);
   useEffect(() => {
     fetch("/product.json")
       .then((res) => res.json())
@@ -54,7 +56,7 @@ const Product = () => {
                 <h3>Rupchanda Fortified Pure Soybean Oil for Cooking</h3>
                 <h4 className="text-[12px] text-[#828282]">5 Liter</h4>
                 <h4 className="text-[16px] text-[#099] font-bold">$422.75</h4>
-                <button className=" py-1 rounded-sm w-full border-2 font-semibold text-[#099] border-[#099] mx-auto block text-center">
+                <button onClick={() => setCart(!cart)} className=" py-1 rounded-sm w-full border-2 font-semibold text-[#099] border-[#099] mx-auto block text-center">
                   Add To Cart
                 </button>
               </div>{" "}
@@ -70,7 +72,7 @@ const Product = () => {
                 <h4 className="text-[16px] text-[#099] font-bold">$422.75</h4>
                 <button className=" py-1 rounded-sm w-full border-2 font-semibold text-[#099] border-[#099] mx-auto block text-center">
                   Add To Cart
-                </button>
+                </button> 
               </div>{" "}
               <div className="bg-white border border-[#E2E2E2] rounded-sm p-4 space-y-2">
                 <img

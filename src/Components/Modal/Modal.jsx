@@ -16,12 +16,12 @@ const Modal = () => {
           
         };
 
-        const res = await fetch("http://localhost:3000/employee", {
-            method: 'POST',
-            headers: {
-                'content-type' : 'application/json'
-            },
-            body:JSON.stringify(employee)
+        const res = await fetch("https://ai-d-server.vercel.app/employee", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(employee),
         });
         if (res.status == 200) {
             Swal.fire({

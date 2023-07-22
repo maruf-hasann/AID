@@ -24,7 +24,7 @@ const Register = () => {
                 showConfirmButton: false,
                 timer: 1500,
               });
-                navigate('/')
+                navigate("/dashboard/employee");
             })
             .catch(err => console.log(err))
         

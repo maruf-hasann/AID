@@ -12,7 +12,7 @@ const ProductModal = ({refetch}) => {
       weight: data.weight,
       image : data.image
     }
-    const res = await fetch("http://localhost:3000/products", {
+    const res = await fetch("https://ai-d-server.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

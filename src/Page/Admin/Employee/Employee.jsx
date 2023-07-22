@@ -6,7 +6,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 const Employee =  () => {
   const { data: employee = [], refetch } = useQuery(["products"], async () => {
-    const res = await axios.get("http://localhost:3000/show");
+    const res = await axios.get("https://ai-d-server.vercel.app/show");
     return res.data;
   });
 console.log(employee);

@@ -19,7 +19,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const {user} = useContext(authContext)
   return (
-    <div className=" my_container mb-5">
+    <div className=" max-w[1300px] px-40  mx-auto mb-5">
       <div className="relative flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="inline-flex items-center">
@@ -50,7 +50,7 @@ const Header = () => {
               </li>
             </div>
           ) : (
-            <div>
+            <div className="flex">
               <li>
                 <div className="flex gap-2">
                   <AiOutlineUser size={25} className="text-[#008ecc]" />
