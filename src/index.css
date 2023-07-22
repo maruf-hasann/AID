@@ -4,6 +4,9 @@
 body {
     background: #f5f5f5;
 }
+#root {
+    background: white;}
+
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     display: none;
 }

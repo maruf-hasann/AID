@@ -11,13 +11,19 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "axios": "^1.4.0",
+    "firebase": "^10.1.0",
     "localforage": "^1.10.0",
+    "lottie-react": "^2.4.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.2",
     "react-icons": "^4.10.1",
+    "react-query": "^3.39.3",
     "react-router-dom": "^6.14.1",
     "sort-by": "^1.2.0",
+    "sweetalert2": "^11.7.18",
     "swiper": "^10.0.4"
   },
   "devDependencies": {
@@ -25,6 +31,7 @@
     "@types/react-dom": "^18.2.6",
     "@vitejs/plugin-react": "^4.0.1",
     "autoprefixer": "^10.4.14",
+    "daisyui": "^3.3.1",
     "eslint": "^8.44.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",

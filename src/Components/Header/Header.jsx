@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
   BoltIcon,
@@ -14,8 +14,10 @@ import {
 } from "react-icons/ai";
 import './Header.css'
 import Logo from '../../assets/Logo/pngegg.png'
+import { authContext } from "../../AuthProvider/AuthProvider";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const {user} = useContext(authContext)
   return (
     <div className=" my_container mb-5">
       <div className="relative flex items-center justify-between">
@@ -41,18 +43,30 @@ const Header = () => {
               <h2>Cart</h2>
             </div>
           </li>{" "}
-          <li>
-            <div className="flex gap-2">
-              <AiOutlineUser size={25} className="text-[#008ecc]" />
-              <h2>Sign Up/Sign In</h2>
+          {user ? (
+            <div>
+              <li className="font-semibold ">
+                <Link to="/dashboard/employee">Dashboard</Link>
+              </li>
             </div>
-          </li>
-          <li>
-            <div className="flex gap-2">
-              <AiOutlineUser size={25} className="text-[#008ecc]" />
-              <h2>Admin</h2>
+          ) : (
+            <div>
+              <li>
+                <div className="flex gap-2">
+                  <AiOutlineUser size={25} className="text-[#008ecc]" />
+                  <h2>
+                    <Link to="/login">Sign Up/Sign In</Link>
+                  </h2>
+                </div>
+              </li>
+              <li>
+                <div className="flex gap-2">
+                  <AiOutlineUser size={25} className="text-[#008ecc]" />
+                  <Link to="/login">Admin</Link>
+                </div>
+              </li>
             </div>
-          </li>
+          )}
         </ul>
 
         {/* Mobile Navbar Section */}
@@ -87,7 +101,49 @@ const Header = () => {
                   </div>
                 </div>
                 {/* Mobile Menu */}
-                <nav></nav>
+                <nav>
+                  <ul className="items-center hidden space-x-7 lg:flex">
+                    <li>
+                      <div className="flex gap-2">
+                        <AiOutlineShoppingCart
+                          size={25}
+                          className="text-[#008ecc]"
+                        />
+                        <h2>Cart</h2>
+                      </div>
+                    </li>{" "}
+                    {user ? (
+                      <div>
+                        <li className="font-semibold ">
+                          <Link to="/dashboard/employee">Dashboard</Link>
+                        </li>
+                      </div>
+                    ) : (
+                      <div>
+                        <li>
+                          <div className="flex gap-2">
+                            <AiOutlineUser
+                              size={25}
+                              className="text-[#008ecc]"
+                            />
+                            <h2>
+                              <Link to="/login">Sign Up/Sign In</Link>
+                            </h2>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="flex gap-2">
+                            <AiOutlineUser
+                              size={25}
+                              className="text-[#008ecc]"
+                            />
+                            <Link to="/login">Admin</Link>
+                          </div>
+                        </li>
+                      </div>
+                    )}
+                  </ul>
+                </nav>
               </div>
             </div>
           )}
